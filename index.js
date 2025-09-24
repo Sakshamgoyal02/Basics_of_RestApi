@@ -1,29 +1,40 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
 
-const PORT = 3000
+const PORT = 3000;
 
-const member = [
+const members = [
     {
-        user: 1,
+        id: 1,
         name: "John Doe",
-        age: 10,
+        age: 10
         
     },
     {
-        user: 2,
+        id: 2,
         name: "Jane Doe",
-        age: 15,
+        age: 15
 
     },
     {
-        user: 3,
+        id: 3,
         name: "Simon",
-        age: 20,
+        age: 20
 
-    }
+    },
 ]
-app.get("/showUser")
+
+app.get("/showAllUser", (req, res) => {
+    res.status(200).json(members);
+})
+
+app.get("/showUser/:userId", (req, res) => {
+    const id = req.params.userId
+    const user = members.filter (member => member.id === id);
+
+    (user.length !== 0)? res.status(200).json(user): res.status(404).json({message : `user not found with id $ {id}`})
+})
+
 
 app.listen(PORT, () => {
     console.log(`This server is running on port http://localhost:${PORT}`)
