@@ -16,5 +16,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakshamgoyal02/Basics_of_RestApi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sakshamgoyal02/Basics_of_RestApi/issues"
+  },
+  "homepage": "https://github.com/Sakshamgoyal02/Basics_of_RestApi#readme"
 }
